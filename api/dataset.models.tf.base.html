@@ -1,0 +1,1070 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TFModel &#8212; Dataset 0.3.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dataset.models.tf.layers" href="dataset.models.tf.layers.html" />
+    <link rel="prev" title="dataset.models.tf" href="dataset.models.tf.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.layers.html" title="dataset.models.tf.layers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.html" title="dataset.models.tf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.models.html" >dataset.models</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="dataset.models.tf.html" accesskey="U">dataset.models.tf</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dataset.models.tf.html"
+                        title="previous chapter">dataset.models.tf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dataset.models.tf.layers.html"
+                        title="next chapter">dataset.models.tf.layers</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/dataset.models.tf.base.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dataset.models.tf.base">
+<span id="tfmodel"></span><h1>TFModel<a class="headerlink" href="#module-dataset.models.tf.base" title="Permalink to this headline">¶</a></h1>
+<p>Contains base class for tensorflow models</p>
+<dl class="class">
+<dt id="dataset.models.tf.base.TFModel">
+<em class="property">class </em><code class="descname">TFModel</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dataset.models.base.BaseModel</span></code></p>
+<p>Base class for all tensorflow models</p>
+<p><strong>Configuration</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">load</span></code> are inherited from <a class="reference internal" href="dataset.models.html#dataset.models.BaseModel" title="dataset.models.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a>.</p>
+<dl class="docutils">
+<dt>device <span class="classifier-delimiter">:</span> <span class="classifier">str or callable</span></dt>
+<dd>if str, a device name (e.g. ‘/device:GPU:0’).
+if callable, a function which takes an operation and returns a device name for it.
+See <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/device">tf.device</a> for details.</dd>
+<dt>session <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/Session#__init__">Tensorflow session parameters</a>.</dd>
+<dt>inputs <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>model inputs (see <a class="reference internal" href="#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a>)</dd>
+<dt>loss - a loss function, might be defined in one of three formats:</dt>
+<dd><ul class="first simple">
+<li>name</li>
+<li>tuple (name, args)</li>
+<li>dict {‘name’: name, **args}</li>
+</ul>
+<dl class="docutils">
+<dt>where name might be one of:</dt>
+<dd><ul class="first last simple">
+<li>short name (<cite>‘mse’</cite>, <cite>‘ce’</cite>, <cite>‘l1’</cite>, <cite>‘cos’</cite>, <cite>‘hinge’</cite>, <cite>‘huber’</cite>, <cite>‘logloss’</cite>)</li>
+<li>a function name from <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/losses">tf.losses</a>
+(e.g. <cite>‘absolute_difference’</cite> or <cite>‘sparse_softmax_cross_entropy’</cite>)</li>
+<li>callable</li>
+</ul>
+</dd>
+</dl>
+<p>If loss is callable, then it should add the result to a loss collection.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">add_loss</span></code> should be set to True. An optional collection might also be specified through
+<code class="docutils literal notranslate"><span class="pre">loss_collection</span></code> parameter.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Losses from non-default collections won’t be detected automatically,
+so you should process them within your code.</p>
+</div>
+<p>Examples:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">'mse'}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">'sigmoid_cross_entropy',</span> <span class="pre">'label_smoothing':</span> <span class="pre">1e-6}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">tf.losses.huber_loss,</span> <span class="pre">'reduction':</span> <span class="pre">tf.losses.Reduction.MEAN}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">external_loss_fn_with_add_loss_inside}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">external_loss_fn_without_add_loss,</span> <span class="pre">'add_loss':</span> <span class="pre">True}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'loss':</span> <span class="pre">external_loss_fn_to_collection,</span> <span class="pre">'add_loss':</span> <span class="pre">True,</span> <span class="pre">'loss_collection':</span> <span class="pre">tf.GraphKeys.LOSSES}</span></code></li>
+</ul>
+</dd>
+<dt>decay - a learning rate decay algorithm might be defined in one of three formats:</dt>
+<dd><ul class="first simple">
+<li>name</li>
+<li>tuple (name, args)</li>
+<li>dict {‘name’: name, <a href="#id1"><span class="problematic" id="id2">**</span></a>args}</li>
+</ul>
+<p>where name might be one of:</p>
+<ul class="simple">
+<li>short name (‘exp’, ‘invtime’, ‘naturalexp’, ‘const’, ‘poly’)</li>
+<li>a function name from <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/train">tf.train</a>
+(e.g. ‘exponential_decay’)</li>
+<li>a callable</li>
+</ul>
+<p>Examples:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">{'decay':</span> <span class="pre">'exp'}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'decay':</span> <span class="pre">('polynomial_decay',</span> <span class="pre">{'decay_steps':</span> <span class="pre">10000})}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'decay':</span> <span class="pre">{'name':</span> <span class="pre">tf.train.inverse_time_decay,</span> <span class="pre">'decay_rate':</span> <span class="pre">.5}</span></code></li>
+</ul>
+</dd>
+<dt>optimizer - an optimizer might be defined in one of three formats:</dt>
+<dd><blockquote class="first">
+<div><ul class="simple">
+<li>name</li>
+<li>tuple (name, args)</li>
+<li>dict {‘name’: name, **args}</li>
+</ul>
+<p>where name might be one of:</p>
+<ul class="simple">
+<li>short name (e.g. ‘Adam’, ‘Adagrad’, any optimizer from
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/train">tf.train</a> without a word <cite>Optimizer</cite>)</li>
+<li>a function name from <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/train">tf.train</a>
+(e.g. ‘FtlrOptimizer’)</li>
+<li>a callable</li>
+</ul>
+</div></blockquote>
+<p>Examples:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">{'optimizer':</span> <span class="pre">'Adam'}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'optimizer':</span> <span class="pre">('Ftlr',</span> <span class="pre">{'learning_rate_power':</span> <span class="pre">0})}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'optimizer':</span> <span class="pre">{'name':</span> <span class="pre">'Adagrad',</span> <span class="pre">'initial_accumulator_value':</span> <span class="pre">0.01}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'optimizer':</span> <span class="pre">functools.partial(tf.train.MomentumOptimizer,</span> <span class="pre">momentum=0.95)}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'optimizer':</span> <span class="pre">some_optimizer_fn}</span></code></li>
+</ul>
+</dd>
+<dt>common <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>default parameters for all <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a></dd>
+<dt>input_block <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first">parameters for the input block, usually <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a> parameters.</p>
+<p>The only required parameter here is <code class="docutils literal notranslate"><span class="pre">input_block/inputs</span></code> which should contain a name or
+a list of names from <code class="docutils literal notranslate"><span class="pre">inputs</span></code> which tensors will be passed to <code class="docutils literal notranslate"><span class="pre">input_block</span></code> as <code class="docutils literal notranslate"><span class="pre">inputs</span></code>.</p>
+<p>Examples:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">{'input_block/inputs':</span> <span class="pre">'images'}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'input_block':</span> <span class="pre">dict(inputs='features')}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">{'input_block':</span> <span class="pre">dict(inputs='images',</span> <span class="pre">layout='nac</span> <span class="pre">nac',</span> <span class="pre">filters=64,</span> <span class="pre">kernel_size=[7,</span> <span class="pre">3],</span> <span class="pre">strides=[1,</span> <span class="pre">2])}</span></code></li>
+</ul>
+</dd>
+<dt>body <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for the base network layers, usually <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a> parameters</dd>
+<dt>head <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for the head layers, usually <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a> parameters</dd>
+<dt>output <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first docutils">
+<dt>predictions <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>operation to apply for body output tensor to make the network predictions.
+The tensor’s name is ‘predictions’ which is later used in the loss function.</dd>
+<dt>ops <span class="classifier-delimiter">:</span> <span class="classifier">tuple of str</span></dt>
+<dd>additional operations</dd>
+<dt>prefix <span class="classifier-delimiter">:</span> <span class="classifier">str or tuple of str</span></dt>
+<dd>prefixes for additional output tensor names (default=’output’)</dd>
+</dl>
+<p>Operations supported are:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">None</span></code> - do nothing (identity)</li>
+<li>‘accuracy’ - accuracy metrics (the share of <code class="docutils literal notranslate"><span class="pre">true_labels</span> <span class="pre">==</span> <span class="pre">predicted_labels</span></code>)</li>
+<li>‘proba’ - multiclass probabilities (softmax)</li>
+<li>‘labels’ - most probable labels (argmax)</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<p><strong>How to create your own model</strong></p>
+<ol class="arabic simple">
+<li>Take a look at <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a> since it is widely used as a building block almost everywhere.</li>
+<li>Define model defaults (e.g. number of filters, batch normalization options, etc)
+by overriding <a class="reference internal" href="#dataset.models.tf.base.TFModel.default_config" title="dataset.models.tf.base.TFModel.default_config"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.default_config()</span></code></a>.
+Or skip it and hard code all the parameters in unpredictable places without the possibility to
+change them easily through model’s config.</li>
+<li>Define build configuration (e.g. number of classes, etc)
+by overriding <a class="reference internal" href="#dataset.models.tf.base.TFModel.build_config" title="dataset.models.tf.base.TFModel.build_config"><code class="xref py py-meth docutils literal notranslate"><span class="pre">build_config()</span></code></a>.</li>
+<li>Override <a class="reference internal" href="#dataset.models.tf.base.TFModel.input_block" title="dataset.models.tf.base.TFModel.input_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">input_block()</span></code></a>, <a class="reference internal" href="#dataset.models.tf.base.TFModel.body" title="dataset.models.tf.base.TFModel.body"><code class="xref py py-meth docutils literal notranslate"><span class="pre">body()</span></code></a> and <a class="reference internal" href="#dataset.models.tf.base.TFModel.head" title="dataset.models.tf.base.TFModel.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">head()</span></code></a>, if needed.
+In many cases defaults and build config are just enough to build a network without additional code writing.</li>
+</ol>
+<p>Things worth mentioning:</p>
+<ol class="arabic simple">
+<li>Input data and its parameters should be defined in configuration under <code class="docutils literal notranslate"><span class="pre">inputs</span></code> key.
+See <a class="reference internal" href="#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a> for details.</li>
+<li>You might want to use a convenient multidimensional <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a>,
+as well as <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.global_average_pooling" title="dataset.models.tf.layers.global_average_pooling"><code class="xref py py-func docutils literal notranslate"><span class="pre">global_average_pooling()</span></code></a>, <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.mip" title="dataset.models.tf.layers.mip"><code class="xref py py-func docutils literal notranslate"><span class="pre">mip()</span></code></a>, or other predefined layers.
+Of course, you can use usual <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/layers">tensorflow layers</a>.</li>
+<li>If you make dropout, batch norm, etc by hand, you might use a predefined <code class="docutils literal notranslate"><span class="pre">self.is_training</span></code> tensor.</li>
+<li>For decay and training control there is a predefined <code class="docutils literal notranslate"><span class="pre">self.global_step</span></code> tensor.</li>
+<li>In many cases there is no need to write a loss function, learning rate decay and optimizer
+as they might be defined through config.</li>
+<li>For a configured loss one of the inputs should have a name <code class="docutils literal notranslate"><span class="pre">targets</span></code> and
+one of the tensors in your model should have a name <code class="docutils literal notranslate"><span class="pre">predictions</span></code>.
+They will be used in a loss function.</li>
+<li>If you have defined your own loss function, call <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/losses/add_loss">tf.losses.add_loss(…)</a>.</li>
+<li>If you need to use your own optimizer, assign <code class="docutils literal notranslate"><span class="pre">self.train_step</span></code> to the train step operation.
+Don’t forget about <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/layers/batch_normalization">UPDATE_OPS control dependency</a>.</li>
+</ol>
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.build">
+<code class="descname">build</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the model</p>
+<ol class="arabic simple">
+<li>Create a graph</li>
+<li>Define <code class="docutils literal notranslate"><span class="pre">is_training</span></code> and <code class="docutils literal notranslate"><span class="pre">global_step</span></code> tensors</li>
+<li>Define a model architecture by calling :meth:<code class="docutils literal notranslate"><span class="pre">._build</span></code></li>
+<li>Create a loss function from config</li>
+<li>Create an optimizer and define a train step from config</li>
+<li><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/layers/batch_normalization">Set UPDATE_OPS control dependency on train step</a></li>
+<li>Create a tensorflow session</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.create_session">
+<code class="descname">create_session</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.create_session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.create_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create TF session</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the trained model to allow a new training from scratch</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.to_classes">
+<code class="descname">to_classes</code><span class="sig-paren">(</span><em>tensor</em>, <em>input_name</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.to_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.to_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert tensor with labels to classes of <code class="docutils literal notranslate"><span class="pre">input_name</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_number_of_trainable_vars">
+<code class="descname">get_number_of_trainable_vars</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_number_of_trainable_vars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_number_of_trainable_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of trainable variable in the model graph</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_tensor_config">
+<code class="descname">get_tensor_config</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_tensor_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_tensor_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return tensor configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tensor config (see <a class="reference internal" href="#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a>)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">ValueError shape in tensor configuration isn’t int, tuple or list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>fetches=None</em>, <em>feed_dict=None</em>, <em>use_lock=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train the model with the data provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fetches</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><em>tuple</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – a sequence of <cite>tf.Operation</cite> and/or <cite>tf.Tensor</cite> to calculate</li>
+<li><strong>feed_dict</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – input data, where key is a placeholder name and value is a numpy value</li>
+<li><strong>use_lock</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – if True, the whole train step is locked, thus allowing for multithreading.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Calculated values of tensors in <cite>fetches</cite> in the same structure</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/Session#run">Tensorflow Session run</a></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>fetches=None</em>, <em>feed_dict=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get predictions on the data provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fetches</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><em>tuple</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – a sequence of <cite>tf.Operation</cite> and/or <cite>tf.Tensor</cite> to calculate</li>
+<li><strong>feed_dict</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – input data, where key is a placeholder name and value is a numpy value</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Calculated values of tensors in <cite>fetches</cite> in the same structure</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The only difference between <cite>predict</cite> and <cite>train</cite> is that <cite>train</cite> also executes a <cite>train_step</cite> operation
+which involves calculating and applying gradients and thus chainging model weights.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/Session#run">Tensorflow Session run</a></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save tensorflow model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a path to a directory where all model files will be stored</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tf_model</span> <span class="o">=</span> <span class="n">ResNet34</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now save the model</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tf_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;/path/to/models/resnet34&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The model will be saved to /path/to/models/resnet34</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>path</em>, <em>graph=None</em>, <em>checkpoint=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a TensorFlow model from files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a directory where a model is stored</li>
+<li><strong>graph</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a filename for a metagraph file</li>
+<li><strong>checkpoint</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a checkpoint file name or None to load the latest checkpoint</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">resnet</span> <span class="o">=</span> <span class="n">ResNet34</span><span class="p">(</span><span class="n">load</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;/path/to/models/resnet34&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tf_model</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;/path/to/models/resnet34&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.store_to_attr">
+<code class="descname">store_to_attr</code><span class="sig-paren">(</span><em>attr</em>, <em>graph_item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.store_to_attr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.store_to_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a graph item (variable or operation) accessible as a model attribute</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.crop">
+<em class="property">classmethod </em><code class="descname">crop</code><span class="sig-paren">(</span><em>inputs</em>, <em>shape_images</em>, <em>data_format='channels_last'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.crop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crop input tensor to a shape of a given image.
+If shape_image has not fully defined shape (shape_image.get_shape() has at least one None),
+the returned tf.Tensor will be of unknown shape except the number of channels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>shape_images</strong> (<em>tf.Tensor</em>) – a source images to which</li>
+<li><strong>data_format</strong> (<em>str {'channels_last'</em><em>, </em><em>'channels_first'}</em>) – data format</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.input_block">
+<em class="property">classmethod </em><code class="descname">input_block</code><span class="sig-paren">(</span><em>inputs</em>, <em>name='input_block'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.input_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.input_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform inputs with a convolution block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For other parameters see <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tf.Tensor</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.body">
+<em class="property">classmethod </em><code class="descname">body</code><span class="sig-paren">(</span><em>inputs</em>, <em>name='body'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.body"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base layers which produce a network embedding</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For other parameters see <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tf.Tensor</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyModel</span><span class="o">.</span><span class="n">body</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;ca ca ca&#39;</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">512</span><span class="p">],</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.head">
+<em class="property">classmethod </em><code class="descname">head</code><span class="sig-paren">(</span><em>inputs</em>, <em>name='head'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.head"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Last network layers which produce output from the network embedding</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For other parameters see <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.conv_block" title="dataset.models.tf.layers.conv_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">conv_block()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tf.Tensor</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>A fully convolutional head with 3x3 and 1x1 convolutions and global max pooling:</p>
+<blockquote>
+<div>MyModel.head(2, network_embedding, layout=’cacaP’, filters=[128, num_classes], kernel_size=[3, 1])</div></blockquote>
+<p>A fully connected head with dropouts, a dense layer with 1000 units and final dense layer with class logits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyModel</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">network_embedding</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;dfadf&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">],</span> <span class="n">dropout_rate</span><span class="o">=.</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.output">
+<code class="descname">output</code><span class="sig-paren">(</span><em>inputs</em>, <em>ops=None</em>, <em>prefix=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add output operations to a model graph, like predictions, quality metrics, etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em><em> or </em><em>a sequence of tf.Tensors</em>) – input tensors</li>
+<li><strong>ops</strong> (<em>a sequence of str</em><em> or </em><em>callable</em>) – <dl class="docutils">
+<dt>operation names::</dt>
+<dd><ul class="first last">
+<li>’sigmoid’ - add <code class="docutils literal notranslate"><span class="pre">sigmoid(inputs)</span></code></li>
+<li>’proba’ - add <code class="docutils literal notranslate"><span class="pre">softmax(inputs)</span></code></li>
+<li>’labels’ - add <code class="docutils literal notranslate"><span class="pre">argmax(inputs)</span></code></li>
+<li>’accuracy’ - add <code class="docutils literal notranslate"><span class="pre">mean(predicted_labels</span> <span class="pre">==</span> <span class="pre">true_labels)</span></code></li>
+<li>callable - add an arbitrary operation</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>prefix</strong> (<em>a sequence of str</em>) – a prefix for each input if there are multiple inputs</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li>ValueError if the number of outputs does not equal to the number of prefixes</li>
+<li>TypeError if inputs is not a Tensor or a sequence of Tensors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.default_config">
+<em class="property">classmethod </em><code class="descname">default_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.default_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.default_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define model defaults</p>
+<p>You need to override this method if you expect your model or its blocks to serve as a base for other models
+(e.g. VGG for FCN, ResNet for LinkNet, etc).</p>
+<p>Put here all constants (like the number of filters, kernel sizes, block layouts, strides, etc)
+specific to the model, but independent of anything else (like image shapes, number of classes, etc).</p>
+<p>These defaults can be changed in <cite>.build_config</cite> or when calling <cite>Pipeline.init_model</cite>.</p>
+<p>Usually, it looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">default_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">TFModel</span><span class="o">.</span><span class="n">default_config</span><span class="p">()</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;input_block&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;cnap&#39;</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                      <span class="n">pool_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pool_strides</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">][</span><span class="s1">&#39;filters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;cnadV&#39;</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=.</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">config</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.fill_params">
+<em class="property">classmethod </em><code class="descname">fill_params</code><span class="sig-paren">(</span><em>_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.fill_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.fill_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill block params from default config and kwargs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.build_config">
+<code class="descname">build_config</code><span class="sig-paren">(</span><em>names=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.build_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.build_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a model architecture configuration</p>
+<p>It takes just 2 steps:</p>
+<ol class="arabic">
+<li><p class="first">Define names for all placeholders and make input tensors by calling <code class="docutils literal notranslate"><span class="pre">super().build_config(names)</span></code>.</p>
+<p>If the model config does not contain any name from <code class="docutils literal notranslate"><span class="pre">names</span></code>, <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.6)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a> is raised.</p>
+<p>See <a class="reference internal" href="#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a> for details.</p>
+</li>
+<li><p class="first">Define parameters for <a class="reference internal" href="#dataset.models.tf.base.TFModel.input_block" title="dataset.models.tf.base.TFModel.input_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.input_block()</span></code></a>, <a class="reference internal" href="#dataset.models.tf.base.TFModel.body" title="dataset.models.tf.base.TFModel.body"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.body()</span></code></a>, <a class="reference internal" href="#dataset.models.tf.base.TFModel.head" title="dataset.models.tf.base.TFModel.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.head()</span></code></a>
+which depend on inputs.</p>
+</li>
+<li><p class="first">Don’t forget to return <code class="docutils literal notranslate"><span class="pre">config</span></code>.</p>
+</li>
+</ol>
+<p>Typically it looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">names</span> <span class="ow">or</span> <span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="s1">&#39;labels&#39;</span><span class="p">]</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build_config</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">][</span><span class="s1">&#39;num_classes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span><span class="p">(</span><span class="s1">&#39;targets&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">config</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.channels_axis">
+<em class="property">classmethod </em><code class="descname">channels_axis</code><span class="sig-paren">(</span><em>data_format</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.channels_axis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.channels_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the channels axis for the tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_format</strong> (<em>str {'channels_last'</em><em>, </em><em>'channels_first'}</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>number of channels</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.data_format">
+<code class="descname">data_format</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.data_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.data_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tensor data format (channels_last or channels_first)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>data_format</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.has_classes">
+<code class="descname">has_classes</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.has_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.has_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a tensor has classes defined in the config</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.classes">
+<code class="descname">classes</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the  number of classes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.num_classes">
+<code class="descname">num_classes</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.num_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.num_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the  number of classes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_num_channels">
+<code class="descname">get_num_channels</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_num_channels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_num_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of channels in the tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>number of channels</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.num_channels">
+<em class="property">classmethod </em><code class="descname">num_channels</code><span class="sig-paren">(</span><em>tensor</em>, <em>data_format='channels_last'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.num_channels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.num_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of channels in the input tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>shape</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple of ints</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_shape">
+<code class="descname">get_shape</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tensor shape without batch dimension</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>shape</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)">tuple</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.shape">
+<em class="property">classmethod </em><code class="descname">shape</code><span class="sig-paren">(</span><em>tensor</em>, <em>dynamic=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return shape of the input tensor without batch size</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tensor</strong> (<em>tf.Tensor</em>) – </li>
+<li><strong>dynamic</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – if True, returns tensor which represents shape. If False, returns list of ints and/or Nones</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shape</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_spatial_dim">
+<code class="descname">get_spatial_dim</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_spatial_dim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_spatial_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tensor spatial dimensionality (without batch and channels dimensions)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>number of spatial dimensions</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.spatial_dim">
+<em class="property">classmethod </em><code class="descname">spatial_dim</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.spatial_dim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.spatial_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return spatial dim of the input tensor (without channels and batch dimension)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>dim</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_spatial_shape">
+<code class="descname">get_spatial_shape</code><span class="sig-paren">(</span><em>tensor</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_spatial_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_spatial_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tensor spatial shape (without batch and channels dimensions)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>spatial shape</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)">tuple</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.spatial_shape">
+<em class="property">classmethod </em><code class="descname">spatial_shape</code><span class="sig-paren">(</span><em>tensor</em>, <em>data_format='channels_last'</em>, <em>dynamic=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.spatial_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.spatial_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return spatial shape of the input tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tensor</strong> (<em>tf.Tensor</em>) – </li>
+<li><strong>dynamic</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – if True, returns tensor which represents shape. If False, returns list of ints and/or Nones</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shape</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.base.TFModel.get_batch_size">
+<code class="descname">get_batch_size</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.get_batch_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.get_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return batch size (the length of the first dimension) of the input tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>batch size</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a> or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.batch_size">
+<em class="property">classmethod </em><code class="descname">batch_size</code><span class="sig-paren">(</span><em>tensor</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.batch_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return batch size (the length of the first dimension) of the input tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tensor</strong> (<em>tf.Tensor</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>batch size</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a> or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.se_block">
+<em class="property">classmethod </em><code class="descname">se_block</code><span class="sig-paren">(</span><em>inputs</em>, <em>ratio</em>, <em>name='se'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.se_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.se_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Squeeze and excitation block</p>
+<p>Hu J. et al. “<a class="reference external" href="https://arxiv.org/abs/1709.01507">Squeeze-and-Excitation Networks</a>”</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>ratio</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – squeeze ratio for the number of filters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.base.TFModel.upsample">
+<em class="property">classmethod </em><code class="descname">upsample</code><span class="sig-paren">(</span><em>inputs</em>, <em>factor=None</em>, <em>layout='b'</em>, <em>name='upsample'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel.upsample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.base.TFModel.upsample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upsample input tensor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em><em> or </em><em>tuple of two tf.Tensor</em>) – a tensor to resize and a tensor which size to resize to</li>
+<li><strong>factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – an upsamping scale</li>
+<li><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – <p>resizing technique, a sequence of:</p>
+<ul>
+<li>R - use residual connection with bilinear additive upsampling (must be the first symbol)</li>
+<li>b - bilinear resize</li>
+<li>B - bilinear additive upsampling</li>
+<li>N - nearest neighbor resize</li>
+<li>t - transposed convolution</li>
+<li>X - subpixel convolution</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.TFModel._make_inputs">
+<code class="descclassname">TFModel.</code><code class="descname">_make_inputs</code><span class="sig-paren">(</span><em>names=None</em>, <em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/base.html#TFModel._make_inputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.TFModel._make_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create model input data from config provided</p>
+<p>In the config’s inputs section it looks for <code class="docutils literal notranslate"><span class="pre">names</span></code>, creates placeholders required, and
+makes some typical transformations (like one-hot-encoding), if needed.</p>
+<p><strong>Configuration</strong></p>
+<dl class="docutils">
+<dt>inputs <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>a placeholder name</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>values <span class="classifier-delimiter">:</span> <span class="classifier">dict or tuple</span></dt>
+<dd>each input’s config</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Input config:</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">dtype</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">str or tf.DType (by default ‘float32’)</span></dt>
+<dd>data type</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">shape</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">int, tuple, list or None (default)</span></dt>
+<dd>a tensor shape which includes the number of channels/classes and doesn’t include a batch size.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">classes</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">array-like or None (default)</span></dt>
+<dd>an array of class labels if data labels are strings or anything else except <code class="docutils literal notranslate"><span class="pre">np.arange(num_classes)</span></code></dd>
+<dt><code class="docutils literal notranslate"><span class="pre">data_format</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">str {<code class="docutils literal notranslate"><span class="pre">'channels_first'</span></code>, <code class="docutils literal notranslate"><span class="pre">'channels_last'</span></code>} or {<code class="docutils literal notranslate"><span class="pre">'f'</span></code>, <code class="docutils literal notranslate"><span class="pre">'l'</span></code>}</span></dt>
+<dd>The ordering of the dimensions in the inputs. Default is ‘channels_last’.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">transform</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">str or callable</span></dt>
+<dd><p class="first">Predefined transforms are</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">'ohe'</span></code> - one-hot encoding</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mip</span> <span class="pre">&#64;</span> <span class="pre">d'</span></code> - maximum intensity projection <a class="reference internal" href="dataset.models.tf.layers.html#dataset.models.tf.layers.mip" title="dataset.models.tf.layers.mip"><code class="xref py py-func docutils literal notranslate"><span class="pre">mip()</span></code></a>
+with depth <code class="docutils literal notranslate"><span class="pre">d</span></code> (should be int)</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">name</span></code> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>a name for the transformed and reshaped tensor.</dd>
+</dl>
+<p>If an input config is a tuple, it should contain all items exactly in the order shown above:
+dtype, shape, classes, data_format, transform, name.
+If an item is None, the default value will be used instead.</p>
+<p><strong>How it works</strong></p>
+<p>A placholder with <code class="docutils literal notranslate"><span class="pre">dtype</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code> and with a name <code class="docutils literal notranslate"><span class="pre">key</span></code> is created first.
+Then it is transformed with a <code class="docutils literal notranslate"><span class="pre">transform</span></code> function in accordance with <code class="docutils literal notranslate"><span class="pre">data_format</span></code>.
+The resulting tensor will have the name <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>names</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – placeholder names that are expected in the config’s ‘inputs’ section</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li>KeyError if there is any name missing in the config’s ‘inputs’ section.</li>
+<li>ValueError if there are duplicate names.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul>
+<li><p class="first"><strong>placeholders</strong> (<em>dict</em>) –</p>
+<dl class="docutils">
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">a placeholder name</p>
+</dd>
+<dt>value <span class="classifier-delimiter">:</span> <span class="classifier">tf.Tensor</span></dt>
+<dd><p class="first last">placeholder tensor</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>tensors</strong> (<em>dict</em>) –</p>
+<dl class="docutils">
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">a placeholder name</p>
+</dd>
+<dt>value <span class="classifier-delimiter">:</span> <span class="classifier">tf.Tensor</span></dt>
+<dd><p class="first last">an input tensor after transformations</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.layers.html" title="dataset.models.tf.layers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.html" title="dataset.models.tf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.models.html" >dataset.models</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="dataset.models.tf.html" >dataset.models.tf</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Analysis Center.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>

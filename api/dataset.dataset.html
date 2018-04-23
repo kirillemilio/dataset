@@ -1,0 +1,303 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dataset &#8212; Dataset 0.3.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Batch" href="dataset.batch.html" />
+    <link rel="prev" title="Index" href="dataset.index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.batch.html" title="Batch"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dataset.index.html" title="Index"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.core.html" accesskey="U">dataset</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dataset.index.html"
+                        title="previous chapter">Index</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dataset.batch.html"
+                        title="next chapter">Batch</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/dataset.dataset.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dataset">
+<h1>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="class">
+<dt id="dataset.Dataset">
+<em class="property">class </em><code class="descname">Dataset</code><span class="sig-paren">(</span><em>index</em>, <em>batch_class=None</em>, <em>preloaded=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="dataset.Dataset.index">
+<code class="descname">index</code><a class="headerlink" href="#dataset.Dataset.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Dataset.indices">
+<code class="descname">indices</code><a class="headerlink" href="#dataset.Dataset.indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Dataset.is_split">
+<code class="descname">is_split</code><a class="headerlink" href="#dataset.Dataset.is_split" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="dataset.Dataset.build_index">
+<em class="property">static </em><code class="descname">build_index</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset.build_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset.build_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.calc_cv_split">
+<code class="descname">calc_cv_split</code><span class="sig-paren">(</span><em>shares=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.calc_cv_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate split into train, test and validation subsets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>shares</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em> or </em><em>a sequence of floats</em>) – A share of train, test and validation subset respectively.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">a tuple which contains number of items in train, test and validation subsets</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.6)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> – * if shares has more than 3 items
+* if sum of shares is greater than 1
+* if this set does not have enough items to split</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Split into train / test in 80/20 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_set</span><span class="o">.</span><span class="n">calc_cv_split</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Split into train / test / validation in 60/30/10 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_set</span><span class="o">.</span><span class="n">calc_cv_split</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Split into train / test / validation in 50/30/20 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_set</span><span class="o">.</span><span class="n">calc_cv_split</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.create_batch">
+<code class="descname">create_batch</code><span class="sig-paren">(</span><em>batch_indices</em>, <em>pos=False</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset.create_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset.create_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a batch from given indices.</p>
+<p>if <cite>pos</cite> is <cite>False</cite>, then <cite>batch_indices</cite> should contain the indices
+that should be included in the batch
+otherwise <cite>batch_indices</cite> should contain their positions in the current index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.create_subset">
+<code class="descname">create_subset</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset.create_subset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset.create_subset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a dataset based on the given subset of indices</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.cv_split">
+<code class="descname">cv_split</code><span class="sig-paren">(</span><em>shares=0.8</em>, <em>shuffle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.cv_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the dataset into train, test and validation sub-datasets.
+Subsets are available as <cite>.train</cite>, <cite>.test</cite> and <cite>.validation</cite> respectively.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shares</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em>, </em><em>tuple of 2 floats</em><em>, or </em><em>tuple of 3 floats</em>) – train/test/validation shares. Default is 0.8.</li>
+<li><strong>shuffle</strong> (bool, <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="(in NumPy v1.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a>, int or callable) – <p>whether to randomize items order before splitting into subsets. Default is <cite>False</cite>. Can be</p>
+<ul>
+<li><dl class="first docutils">
+<dt><cite>bool</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>False</cite> - to make subsets in the order of indices in the index,</span></dt>
+<dd><cite>True</cite> - to make random subsets.</dd>
+</dl>
+</li>
+<li>a <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="(in NumPy v1.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a> object which has an inplace shuffle method.</li>
+<li><dl class="first docutils">
+<dt><cite>int</cite> - a random seed number which will be used internally to create</dt>
+<dd>a <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="(in NumPy v1.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a> object.</dd>
+</dl>
+</li>
+<li>callable - a function which gets an order and returns a shuffled order.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Split into train / test in 80/20 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">cv_split</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Split into train / test / validation in 60/30/10 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">cv_split</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Split into train / test / validation in 50/30/20 ratio</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">cv_split</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.Dataset.from_dataset">
+<em class="property">classmethod </em><code class="descname">from_dataset</code><span class="sig-paren">(</span><em>dataset</em>, <em>index</em>, <em>batch_class=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset.from_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset.from_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Dataset from another dataset with new index
+(usually a subset of the source dataset index)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.gen_batch">
+<code class="descname">gen_batch</code><span class="sig-paren">(</span><em>batch_size</em>, <em>shuffle=False</em>, <em>n_epochs=1</em>, <em>drop_last=False</em>, <em>bar=False</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.gen_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate batches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.get_default_iter_params">
+<code class="descname">get_default_iter_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.get_default_iter_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return iteration params with default values to start iteration from scratch</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">index</code></dt>
+<dd><p><a class="reference internal" href="dataset.index.html#dataset.DatasetIndex" title="dataset.DatasetIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">dataset.DatasetIndex</span></code></a> – the dataset’s index</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">indices</code></dt>
+<dd><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> – an array with the indices</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">is_split</code></dt>
+<dd><p><em>bool</em> – True if dataset has been split into train / test / validation subsets</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.next_batch">
+<code class="descname">next_batch</code><span class="sig-paren">(</span><em>batch_size</em>, <em>shuffle=False</em>, <em>n_epochs=1</em>, <em>drop_last=False</em>, <em>iter_params=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.next_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a batch</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Dataset.p">
+<code class="descname">p</code><a class="headerlink" href="#dataset.Dataset.p" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="dataset.pipeline.html#dataset.Pipeline" title="dataset.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">dataset.Pipeline</span></code></a> – a short alias for <cite>pipeline()</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.pipeline">
+<code class="descname">pipeline</code><span class="sig-paren">(</span><em>config=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/dataset.html#Dataset.pipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Dataset.pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new data processing workflow</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Dataset.reset_iter">
+<code class="descname">reset_iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dataset.Dataset.reset_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all iteration metadata in order to start iterating from scratch</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.batch.html" title="Batch"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dataset.index.html" title="Index"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.core.html" >dataset</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Analysis Center.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,482 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Batch &#8212; Dataset 0.3.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ImagesBatch" href="dataset.batch_image.html" />
+    <link rel="prev" title="Dataset" href="dataset.dataset.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.batch_image.html" title="ImagesBatch"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dataset.dataset.html" title="Dataset"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.core.html" accesskey="U">dataset</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dataset.dataset.html"
+                        title="previous chapter">Dataset</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dataset.batch_image.html"
+                        title="next chapter">ImagesBatch</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/dataset.batch.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="batch">
+<h1>Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="class">
+<dt id="dataset.Batch">
+<em class="property">class </em><code class="descname">Batch</code><span class="sig-paren">(</span><em>index</em>, <em>preloaded=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>The core Batch class</p>
+<dl class="method">
+<dt id="dataset.Batch.add_components">
+<code class="descname">add_components</code><span class="sig-paren">(</span><em>components</em>, <em>init=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.add_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.add_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new components</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>components</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – new component names</li>
+<li><strong>init</strong> (<em>array-like</em>) – initial component data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.apply_transform">
+<code class="descname">apply_transform</code><span class="sig-paren">(</span><em>ix</em>, <em>func</em>, <em>*args</em>, <em>src=None</em>, <em>dst=None</em>, <em>p=1.0</em>, <em>use_self=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.apply_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.apply_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a function to each item in the batch</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<em>callable</em>) – a function to apply to each item from the source</li>
+<li><strong>src</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em>, </em><em>sequence</em><em>, </em><em>list of str</em>) – <p>the source to get data from, can be:</p>
+<ul>
+<li>None</li>
+<li>str - a component name, e.g. ‘images’ or ‘masks’</li>
+<li>sequence - a numpy-array, list, etc</li>
+<li>list of str - get data from several components</li>
+</ul>
+</li>
+<li><strong>dst</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>array</em>) – <p>the destination to put the result in, can be:</p>
+<ul>
+<li>None</li>
+<li>str - a component name, e.g. ‘images’ or ‘masks’</li>
+<li>array-like - a numpy-array, list, etc</li>
+</ul>
+</li>
+<li><strong>kwargs</strong> (<em>args</em><em>,</em>) – parameters passed to <code class="docutils literal notranslate"><span class="pre">func</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>apply_transform does the following (but in parallel):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">batch</span><span class="p">)):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">dst</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.apply_transform_all">
+<code class="descname">apply_transform_all</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em>, <em>src=None</em>, <em>dst=None</em>, <em>p=1.0</em>, <em>use_self=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.apply_transform_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.apply_transform_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a function the whole batch at once</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<em>callable</em>) – a function to apply to each item from the source</li>
+<li><strong>src</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>array</em>) – <p>the source to get data from, can be:</p>
+<ul>
+<li>str - a component name, e.g. ‘images’ or ‘masks’</li>
+<li>array-like - a numpy-array, list, etc</li>
+</ul>
+</li>
+<li><strong>dst</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>array</em>) – <p>the destination to put the result in, can be:</p>
+<ul>
+<li>None</li>
+<li>str - a component name, e.g. ‘images’ or ‘masks’</li>
+<li>array-like - a numpy-array, list, etc</li>
+</ul>
+</li>
+<li><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – probability of applying transform to an element in the batch</li>
+<li><strong>kwargs</strong> (<em>args</em><em>,</em>) – parameters passed to <code class="docutils literal notranslate"><span class="pre">func</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>apply_transform_all does the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">dst</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.as_dataset">
+<code class="descname">as_dataset</code><span class="sig-paren">(</span><em>dataset=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.as_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.as_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a new dataset from batch data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataset</strong> (<em>could be a dataset</em><em> or </em><em>a Dataset class</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">an instance of a class specified by <cite>dataset</cite> arg, preloaded with this batch data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Batch.components">
+<code class="descname">components</code><em class="property"> = None</em><a class="headerlink" href="#dataset.Batch.components" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Batch.data">
+<code class="descname">data</code><a class="headerlink" href="#dataset.Batch.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>tuple or named components - batch data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.deepcopy">
+<code class="descname">deepcopy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.deepcopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.deepcopy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a deep copy of the batch.</p>
+<p>Constructs a new <code class="docutils literal notranslate"><span class="pre">Batch</span></code> instance and then recursively copies all
+the objects found in the original batch, except the <code class="docutils literal notranslate"><span class="pre">pipeline</span></code>,
+which remains unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#dataset.Batch" title="dataset.Batch">Batch</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.do_nothing">
+<code class="descname">do_nothing</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.do_nothing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.do_nothing" title="Permalink to this definition">¶</a></dt>
+<dd><p>An empty action (might be convenient in complicated pipelines)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><em>*args</em>, <em>dst=None</em>, <em>fmt=None</em>, <em>components=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save data to another array or a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dst</strong> – a destination (e.g. an array or a file name)</li>
+<li><strong>fmt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a destination format, one of None, ‘blosc’, ‘csv’, ‘hdf5’, ‘feather’</li>
+<li><strong>components</strong> (<em>None</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tuple of str</em>) – components to load</li>
+<li><strong>*args</strong> – other parameters are passed to format-specific writers</li>
+<li><strong>*kwargs</strong> – other parameters are passed to format-specific writers</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.Batch.from_batch">
+<em class="property">classmethod </em><code class="descname">from_batch</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.from_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.from_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create batch from another batch</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.Batch.from_data">
+<em class="property">classmethod </em><code class="descname">from_data</code><span class="sig-paren">(</span><em>index</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.from_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create batch from a given dataset</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>item=None</em>, <em>component=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an item from the batch or the component</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.get_errors">
+<code class="descname">get_errors</code><span class="sig-paren">(</span><em>all_res</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.get_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.get_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of errors from a parallel action</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.get_items">
+<code class="descname">get_items</code><span class="sig-paren">(</span><em>index</em>, <em>data=None</em>, <em>components=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.get_items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.get_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one or several data items from a data source</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.get_model_by_name">
+<code class="descname">get_model_by_name</code><span class="sig-paren">(</span><em>model_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.get_model_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.get_model_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a model specification given its name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.get_pos">
+<code class="descname">get_pos</code><span class="sig-paren">(</span><em>data</em>, <em>component</em>, <em>index</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.get_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.get_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a position in data for a given index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>some array</em><em> or </em><em>tuple of arrays</em>) – if <cite>None</cite>, should return a position in <a class="reference internal" href="#dataset.Batch.data" title="dataset.Batch.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">self.data</span></code></a></li>
+<li><strong>components</strong> (<em>None</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – <ul>
+<li>None - data has no components (e.g. just an array or pandas.DataFrame)</li>
+<li><dl class="first docutils">
+<dt>int - a position of a data component, when components names are not defined</dt>
+<dd>(e.g. data is a tuple)</dd>
+</dl>
+</li>
+<li>str - a name of a data component</li>
+</ul>
+</li>
+<li><strong>index</strong> (<em>any</em>) – an index id</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a position in a batch data where an item with a given index is stored</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>It is used to read / write data from / to a given component:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">batch_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">component</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">component</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_data</span>
+</pre></div>
+</div>
+<p>if <cite>self.data</cite> holds a numpy array, then get_pos(None, None, index) should
+just return <cite>self.index.get_pos(index)</cite></p>
+<p>if <cite>self.data.images</cite> contains BATCH_SIZE images as a numpy array,
+then <cite>get_pos(None, ‘images’, index)</cite> should return <cite>self.index.get_pos(index)</cite></p>
+<p>if <cite>self.data.labels</cite> is a dict {index: label}, then <cite>get_pos(None, ‘labels’, index)</cite> should return index.</p>
+<p>if <cite>data</cite> is not <cite>None</cite>, then you need to know in advance how to get a position for a given index.</p>
+<p>For instance, <cite>data</cite> is a large numpy array, and a batch is a subset of this array and
+<cite>batch.index</cite> holds row numbers from a large arrays.
+Thus, <cite>get_pos(data, None, index)</cite> should just return index.</p>
+<p>A more complicated example of data:</p>
+<ul class="simple">
+<li>batch represent small crops of large images</li>
+<li><cite>self.data.source</cite> holds a few large images (e.g just 5 items)</li>
+<li><cite>self.data.coords</cite> holds coordinates for crops (e.g. 100 items)</li>
+<li><cite>self.data.image_no</cite> holds an array of image numbers for each crop (so it also contains 100 items)</li>
+</ul>
+<p>then <cite>get_pos(None, ‘source’, index)</cite> should return <cite>self.data.image_no[self.index.get_pos(index)]</cite>.
+Whilst, <cite>get_pos(data, ‘source’, index)</cite> should return <cite>data.image_no[index]</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Batch.indices">
+<code class="descname">indices</code><a class="headerlink" href="#dataset.Batch.indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>numpy array - an array with the indices</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Batch.items">
+<code class="descname">items</code><a class="headerlink" href="#dataset.Batch.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>list - batch items</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>*args</em>, <em>src=None</em>, <em>fmt=None</em>, <em>components=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data from another array or a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> – a source (e.g. an array or a file name)</li>
+<li><strong>fmt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – a source format, one of None, ‘blosc’, ‘csv’, ‘hdf5’, ‘feather’</li>
+<li><strong>components</strong> (<em>None</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a><em> or </em><em>tuple of str</em>) – components to load</li>
+<li><strong>**kwargs</strong> – other parameters to pass to format-specific loaders</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.make_item_class">
+<code class="descname">make_item_class</code><span class="sig-paren">(</span><em>local=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.make_item_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.make_item_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a class to handle data components</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.Batch.merge">
+<em class="property">classmethod </em><code class="descname">merge</code><span class="sig-paren">(</span><em>batches</em>, <em>batch_size=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge several batches to form a new batch of a given size</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>batches</strong> (<em>tuple of batches</em>) – </li>
+<li><strong>batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em> or </em><em>None</em>) – if <cite>None</cite>, just merge all batches into one batch (the rest will be <cite>None</cite>),
+if <cite>int</cite>, then make one batch of <cite>batch_size</cite> and a batch with the rest of data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>batch, rest</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple of two batches</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.Batch.merge_component">
+<em class="property">classmethod </em><code class="descname">merge_component</code><span class="sig-paren">(</span><em>component=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.merge_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.merge_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge the same component data from several batches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.put_into_data">
+<code class="descname">put_into_data</code><span class="sig-paren">(</span><em>data</em>, <em>components=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.put_into_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.put_into_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data into <code class="xref py py-attr docutils literal notranslate"><span class="pre">_data</span></code> property</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.run_once">
+<code class="descname">run_once</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.run_once"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.run_once" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init function for no parallelism
+Useful for async action-methods (will wait till the method finishes)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.Batch.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/batch.html#Batch.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.Batch.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save batch data to a file (an alias for dump method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset.Batch.size">
+<code class="descname">size</code><a class="headerlink" href="#dataset.Batch.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>int - number of items in the batch</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.batch_image.html" title="ImagesBatch"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dataset.dataset.html" title="Dataset"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="dataset.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="dataset.core.html" >dataset</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Analysis Center.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>

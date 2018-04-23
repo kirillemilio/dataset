@@ -1,0 +1,358 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Global Convolution Network &#8212; Dataset 0.3.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Faster RCNN" href="dataset.models.tf.faster_rcnn.html" />
+    <link rel="prev" title="RefineNet" href="dataset.models.tf.refinenet.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.faster_rcnn.html" title="Faster RCNN"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.refinenet.html" title="RefineNet"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../intro/classes.html" >Classes and capabilities</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../intro/tf_models.html" >Tensorflow models</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../intro/tf_models_zoo.html" accesskey="U">Predefined models</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dataset.models.tf.refinenet.html"
+                        title="previous chapter">RefineNet</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dataset.models.tf.faster_rcnn.html"
+                        title="next chapter">Faster RCNN</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/dataset.models.tf.gcn.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dataset.models.tf.gcn">
+<span id="global-convolution-network"></span><h1>Global Convolution Network<a class="headerlink" href="#module-dataset.models.tf.gcn" title="Permalink to this headline">¶</a></h1>
+<p>Peng C. et al. “<a class="reference external" href="https://arxiv.org/abs/1703.02719">Large Kernel Matters -
+Improve Semantic Segmentation by Global Convolutional Network</a>”</p>
+<dl class="class">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork">
+<em class="property">class </em><code class="descname">GlobalConvolutionNetwork</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.base.TFModel" title="dataset.models.tf.base.TFModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">dataset.models.tf.base.TFModel</span></code></a></p>
+<p>Global Convolution Network</p>
+<p><strong>Configuration</strong></p>
+<dl class="docutils">
+<dt>inputs <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>dict with ‘images’ and ‘masks’ (see <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a>)</dd>
+<dt>body <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>encoder <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>base_class <span class="classifier-delimiter">:</span> <span class="classifier">TFModel</span></dt>
+<dd>encoder model class (should implement <code class="docutils literal notranslate"><span class="pre">make_encoder</span></code>)</dd>
+<dt>filters <span class="classifier-delimiter">:</span> <span class="classifier">list of int</span></dt>
+<dd>number of filters in encoder convolutions</dd>
+</dl>
+</dd>
+<dt>block <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for Global Convolution Network conv block</dd>
+<dt>br <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for boundary refinement conv block</dd>
+<dt>upsample <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for upsampling in decoders</dd>
+</dl>
+</dd>
+<dt>head <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>num_classes <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>number of semantic classes</dd>
+<dt>upsample <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>parameters for upsampling</dd>
+</dl>
+</dd>
+</dl>
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.default_config">
+<em class="property">classmethod </em><code class="descname">default_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.default_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.default_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define model defaults</p>
+<p>You need to override this method if you expect your model or its blocks to serve as a base for other models
+(e.g. VGG for FCN, ResNet for LinkNet, etc).</p>
+<p>Put here all constants (like the number of filters, kernel sizes, block layouts, strides, etc)
+specific to the model, but independent of anything else (like image shapes, number of classes, etc).</p>
+<p>These defaults can be changed in <cite>.build_config</cite> or when calling <cite>Pipeline.init_model</cite>.</p>
+<p>Usually, it looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">default_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">TFModel</span><span class="o">.</span><span class="n">default_config</span><span class="p">()</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;input_block&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;cnap&#39;</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                      <span class="n">pool_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pool_strides</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">][</span><span class="s1">&#39;filters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;cnadV&#39;</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=.</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">config</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.build_config">
+<code class="descname">build_config</code><span class="sig-paren">(</span><em>names=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.build_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.build_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a model architecture configuration</p>
+<p>It takes just 2 steps:</p>
+<ol class="arabic">
+<li><p class="first">Define names for all placeholders and make input tensors by calling <code class="docutils literal notranslate"><span class="pre">super().build_config(names)</span></code>.</p>
+<p>If the model config does not contain any name from <code class="docutils literal notranslate"><span class="pre">names</span></code>, <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.6)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a> is raised.</p>
+<p>See <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.TFModel._make_inputs" title="dataset.models.tf.TFModel._make_inputs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_make_inputs()</span></code></a> for details.</p>
+</li>
+<li><p class="first">Define parameters for <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.base.TFModel.input_block" title="dataset.models.tf.base.TFModel.input_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.input_block()</span></code></a>, <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.base.TFModel.body" title="dataset.models.tf.base.TFModel.body"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.body()</span></code></a>, <a class="reference internal" href="dataset.models.tf.base.html#dataset.models.tf.base.TFModel.head" title="dataset.models.tf.base.TFModel.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TFModel.head()</span></code></a>
+which depend on inputs.</p>
+</li>
+<li><p class="first">Don’t forget to return <code class="docutils literal notranslate"><span class="pre">config</span></code>.</p>
+</li>
+</ol>
+<p>Typically it looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">names</span> <span class="ow">or</span> <span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="s1">&#39;labels&#39;</span><span class="p">]</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build_config</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">][</span><span class="s1">&#39;num_classes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span><span class="p">(</span><span class="s1">&#39;targets&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">config</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.body">
+<em class="property">classmethod </em><code class="descname">body</code><span class="sig-paren">(</span><em>inputs</em>, <em>name='body'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.body"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.body" title="Permalink to this definition">¶</a></dt>
+<dd><p>GCN body</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.encoder">
+<em class="property">classmethod </em><code class="descname">encoder</code><span class="sig-paren">(</span><em>inputs</em>, <em>name='encoder'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.encoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create encoder from a base_class model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+<li><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.block">
+<em class="property">classmethod </em><code class="descname">block</code><span class="sig-paren">(</span><em>inputs</em>, <em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Two branches with two convolutions with large kernels (k,1)(1,k) and (1,k)(k,1)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of output filters</li>
+<li><strong>kernel_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – convolution kernel size</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.boundary_refinement">
+<em class="property">classmethod </em><code class="descname">boundary_refinement</code><span class="sig-paren">(</span><em>inputs</em>, <em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.boundary_refinement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.boundary_refinement" title="Permalink to this definition">¶</a></dt>
+<dd><p>An ordinary ResNet block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.decoder_block">
+<em class="property">classmethod </em><code class="descname">decoder_block</code><span class="sig-paren">(</span><em>inputs</em>, <em>targets</em>, <em>filters=None</em>, <em>name='decoder'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.decoder_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.decoder_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upsample and crop if needed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>targets</strong> (<em>tf.Tensor</em>) – tensor which size to upsample to</li>
+<li><strong>filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em> or </em><em>None</em>) – number of filters in upsampling block</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="dataset.models.tf.gcn.GlobalConvolutionNetwork.head">
+<em class="property">classmethod </em><code class="descname">head</code><span class="sig-paren">(</span><em>inputs</em>, <em>targets</em>, <em>num_classes</em>, <em>name='head'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dataset/models/tf/gcn.html#GlobalConvolutionNetwork.head"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dataset.models.tf.gcn.GlobalConvolutionNetwork.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upsample and boundary refinement blocks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inputs</strong> (<em>tf.Tensor</em>) – input tensor</li>
+<li><strong>targets</strong> (<em>tf.Tensor</em>) – target tensor</li>
+<li><strong>num_classes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of classes (and number of filters in the last convolution)</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – scope name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tf.Tensor</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.faster_rcnn.html" title="Faster RCNN"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dataset.models.tf.refinenet.html" title="RefineNet"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Dataset 0.3.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../intro/classes.html" >Classes and capabilities</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../intro/tf_models.html" >Tensorflow models</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../intro/tf_models_zoo.html" >Predefined models</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Analysis Center.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>
