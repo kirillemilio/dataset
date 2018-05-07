@@ -169,8 +169,10 @@ class Pipeline:
         return new_p
 
     def __lshift__(self, other):
-        if not isinstance(other, Baseset):
-            raise TypeError("Pipelines might take only Datasets. Use as pipeline << dataset")
+        if not isinstance(other, (Baseset, BaseBatch)):
+            raise TypeError("Pipelines might take only Datasets or Batches. Use as pipeline << dataset")
+        if isinstance(other, BaseBatch):
+            return (other.as_dataset() >> self).next_batch(len(other))
         new_p = self.from_pipeline(self)
         new_p.dataset = other
         return new_p
